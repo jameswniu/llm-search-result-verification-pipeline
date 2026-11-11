@@ -1,0 +1,34 @@
+{
+  "Brightleaf Organic Green Tea, Jasmine, 20 ct": {
+    "trusted_result_ids": [1, 2, 3, 4],
+    "note": "Exact. The duplicate listing and the 40 ct pack both count, because the rules ignore pack size. The mint flavor and the loose leaf tea do not."
+  },
+  "FizzWell Cola Zero Sugar 12 fl oz can": {
+    "trusted_result_ids": [1, 2, 5, 6],
+    "note": "Imperfect on purpose. Result 5 is the cherry flavor, a near miss, so this answer has one false positive."
+  },
+  "Harbor Pilsener Lager 6 pk": {
+    "trusted_result_ids": [1, 2, 9],
+    "note": "Imperfect on purpose. Id 9 does not exist (the product has 6 results), so the pipeline must drop it."
+  },
+  "Apple ": {
+    "trusted_result_ids": [],
+    "note": "Exact. A generic title has no specific product, so the answer is empty."
+  },
+  "Sunmill Protein Powder, Vanilla, 2 lb": {
+    "trusted_result_ids": [1, 2, 7],
+    "note": "Exact. Size is ignored and the retailer duplicate counts."
+  },
+  "Greenfield Frsh Bkd Sourdough Boule 24oz": {
+    "trusted_result_ids": [1, 2, 6],
+    "note": "Exact. The abbreviated title still names one loaf."
+  },
+  "Pantry Pride Pancake Mix, Buttermilk, Gluten Free": {
+    "trusted_result_ids": [1, 2, 6],
+    "note": "Exact. Result 6 differs only by listing text and shares the gluten free SKU."
+  },
+  "Cascade Falls Sparkling Water, Blackberry, 12 pk": {
+    "trusted_result_ids": [],
+    "note": "Exact. Every result is a near miss, so the answer is empty."
+  }
+}

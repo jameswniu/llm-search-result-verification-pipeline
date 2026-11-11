@@ -1,0 +1,13 @@
+{
+  "confidence": null,
+  "input_tokens": 0,
+  "output_tokens": 0,
+  "reason": null,
+  "source": "scripted",
+  "trusted_result_ids": [
+    1,
+    2,
+    3,
+    4
+  ]
+}

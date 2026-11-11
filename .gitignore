@@ -1,0 +1,12 @@
+.venv/
+__pycache__/
+*.pyc
+.cache/
+*.tmp
+output*.json
+.held_out_subset_*.json
+products.json
+cv_output/
+.pytest_cache/
+!sample/
+!sample/cache/*.json

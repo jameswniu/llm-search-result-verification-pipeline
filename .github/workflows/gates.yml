@@ -1,0 +1,76 @@
+# CI gates for this repo. The first two steps run before anything is installed, so a pass proves the
+# sample replay needs no API key and no openai package. Replay serves stored answers from sample/cache
+# and never calls a model. The remaining steps run the tests, check that each figure matches its
+# generator, check that the README numbers, badges and figures match live output, and lint the prose.
+name: gates
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+# The jobs only read the repository, so the workflow token gets read access and nothing else.
+permissions:
+  contents: read
+
+jobs:
+  gates:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Keyless replay on the sample, no packages installed
+        run: python3 run.py sample/catalog.json --cache-dir sample/cache --replay --output output.json
+
+      - name: Sample cache matches the scripted answers and the current prompt
+        run: python3 tools/check_replay.py
+
+      - name: Install
+        run: pip install -r requirements.txt
+
+      - name: Unit tests
+        run: python3 -m pytest -q
+
+      - name: Every figure matches its generator
+        run: make figures-check
+
+      - name: README, badges and figures match live output
+        run: python3 tools/check_readme.py
+
+      - name: No em or en dashes in tracked prose
+        run: |
+          # python, not grep -P: BSD grep rejects -P and its exit 2 reads as no match in a pipeline
+          git ls-files -z -- '*.md' '*.py' '*.yml' '*.tape' | python3 -c '
+          import sys
+          bad = 0
+          for path in sys.stdin.buffer.read().split(b"\0"):
+              if not path:
+                  continue
+              for n, line in enumerate(open(path, encoding="utf-8", errors="replace"), 1):
+                  if chr(0x2014) in line or chr(0x2013) in line:
+                      print(f"{path.decode()}:{n}: {line.rstrip()[:100]}"); bad += 1
+          print("clean" if not bad else f"{bad} dash glyph line(s)")
+          sys.exit(1 if bad else 0)
+          '
+
+      - name: The old project name is gone
+        run: |
+          git ls-files -z | python3 -c '
+          import sys
+          old = "ver" + "tex"
+          bad = 0
+          for path in sys.stdin.buffer.read().split(b"\0"):
+              if not path or path.endswith((b".gif", b".png")):
+                  continue
+              data = open(path, "rb").read().lower()
+              if old.encode() in data:
+                  print(f"{path.decode()}: contains the old name"); bad += 1
+          print("clean" if not bad else f"{bad} file(s) with the old name")
+          sys.exit(1 if bad else 0)
+          '

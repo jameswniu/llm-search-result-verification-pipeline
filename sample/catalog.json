@@ -1,0 +1,133 @@
+{
+  "Brightleaf Organic Green Tea, Jasmine, 20 ct": {
+    "product_title": "Brightleaf Organic Green Tea, Jasmine, 20 ct",
+    "product_description": "Organic green tea bags scented with jasmine blossoms, 20 tea bags per box.",
+    "search_results": {
+      "1": "Title: Brightleaf Organic Green Tea, Jasmine, 20 ct\nLink: https://shop-a.example.com/tea/brightleaf-jasmine-20\nSnippet: Organic jasmine green tea bags from Brightleaf. 20 count box.",
+      "2": "Title: Brightleaf Jasmine Green Tea Bags (20 Count) | Shop B\nLink: https://shop-b.example.com/p/brightleaf-jasmine-green-tea-20\nSnippet: Brightleaf organic jasmine green tea, 20 tea bags, free shipping over $35.",
+      "3": "Title: Brightleaf Organic Jasmine Green Tea 20ct (Listing 2)\nLink: https://shop-a.example.com/tea/brightleaf-jasmine-20-alt\nSnippet: Same Brightleaf organic jasmine green tea, 20 bags. Alternate listing.",
+      "4": "Title: Brightleaf Organic Green Tea, Jasmine, 40 ct Value Pack\nLink: https://shop-a.example.com/tea/brightleaf-jasmine-40\nSnippet: Organic jasmine green tea bags from Brightleaf, 40 count value pack.",
+      "5": "Title: Brightleaf Organic Green Tea, Mint, 20 ct\nLink: https://shop-a.example.com/tea/brightleaf-mint-20\nSnippet: Organic green tea with refreshing mint, 20 tea bags.",
+      "6": "Title: Brightleaf Organic Loose Leaf Green Tea, Jasmine, 4 oz\nLink: https://shop-b.example.com/p/brightleaf-jasmine-loose-4oz\nSnippet: Loose leaf jasmine green tea, 4 oz tin. Steep with an infuser.",
+      "7": "Title: Brightleaf Tea Company, Our Story\nLink: https://brands.example.com/brightleaf\nSnippet: Brightleaf has been sourcing organic teas since 2009. Browse all our teas."
+    },
+    "trusted_search_results": [
+      1,
+      2,
+      3,
+      4
+    ]
+  },
+  "FizzWell Cola Zero Sugar 12 fl oz can": {
+    "product_title": "FizzWell Cola Zero Sugar 12 fl oz can",
+    "product_description": "Zero sugar cola in a 12 fl oz can.",
+    "search_results": {
+      "1": "Title: FizzWell Cola Zero Sugar, 12 fl oz cans, 12 pack\nLink: https://shop-a.example.com/soda/fizzwell-zero-12pk\nSnippet: FizzWell Cola Zero Sugar, twelve 12 fl oz cans.",
+      "2": "Title: FizzWell Cola Zero Sugar 12 fl oz Can\nLink: https://shop-b.example.com/p/fizzwell-cola-zero-12oz\nSnippet: Single 12 fl oz can of FizzWell Cola Zero Sugar. Zero calories, zero sugar.",
+      "3": "Title: FizzWell Cola Classic 12 fl oz can\nLink: https://shop-a.example.com/soda/fizzwell-classic-12oz\nSnippet: The original FizzWell Cola with real sugar, 12 fl oz can.",
+      "4": "Title: FizzWell Diet Cola 12 fl oz can\nLink: https://shop-a.example.com/soda/fizzwell-diet-12oz\nSnippet: FizzWell Diet Cola, 12 fl oz can. Light taste, no calories.",
+      "5": "Title: FizzWell Cola Zero Sugar Cherry 12 fl oz can\nLink: https://shop-b.example.com/p/fizzwell-zero-cherry-12oz\nSnippet: Zero sugar cola with cherry flavor, 12 fl oz can.",
+      "6": "Title: FizzWell Cola Zero Sugar, 2 L bottle\nLink: https://shop-a.example.com/soda/fizzwell-zero-2l\nSnippet: FizzWell Cola Zero Sugar in a 2 liter bottle."
+    },
+    "trusted_search_results": [
+      1,
+      2,
+      6
+    ]
+  },
+  "Harbor Pilsener Lager 6 pk": {
+    "product_title": "Harbor Pilsener Lager 6 pk",
+    "product_description": "Crisp pilsener lager, six pack of 12 fl oz bottles.",
+    "search_results": {
+      "1": "Title: Harbor Pilsener Lager, 6 pack bottles\nLink: https://shop-a.example.com/beer/harbor-pilsener-6pk\nSnippet: Harbor Pilsener Lager, six 12 fl oz bottles.",
+      "2": "Title: Harbor Pilsener Lager, 12 pack bottles\nLink: https://shop-b.example.com/p/harbor-pilsener-12pk\nSnippet: Harbor Pilsener Lager, twelve 12 fl oz bottles. Crisp and clean.",
+      "3": "Title: Harbor Pale Ale 6 pk\nLink: https://shop-a.example.com/beer/harbor-pale-ale-6pk\nSnippet: Harbor Pale Ale, hop forward, six pack.",
+      "4": "Title: Harbor Non-Alcoholic Pilsener 6 pk\nLink: https://shop-b.example.com/p/harbor-na-pilsener-6pk\nSnippet: Non-alcoholic pilsener style brew from Harbor, six pack.",
+      "5": "Title: Harbor Brewing Company, Visit Us\nLink: https://brands.example.com/harbor-brewing\nSnippet: Taproom hours, tours and our full list of beers.",
+      "6": "Title: Beer-Batter Fish Recipe with Pilsener Lager\nLink: https://recipes.example.com/beer-batter-fish\nSnippet: A crisp beer batter made with a cold lager. Serves four."
+    },
+    "trusted_search_results": [
+      1,
+      2
+    ]
+  },
+  "Apple ": {
+    "product_title": "Apple",
+    "product_description": "",
+    "search_results": {
+      "1": "Title: Honeycrisp Apples, 3 lb bag\nLink: https://shop-a.example.com/produce/honeycrisp-3lb\nSnippet: Sweet crisp Honeycrisp apples.",
+      "2": "Title: Granny Smith Apples, 2 lb bag\nLink: https://shop-b.example.com/p/granny-smith-2lb\nSnippet: Tart green apples, great for baking.",
+      "3": "Title: Orchard Press Apple Juice, 64 fl oz\nLink: https://shop-a.example.com/juice/orchard-press-apple-64oz\nSnippet: Not from concentrate apple juice.",
+      "4": "Title: Fuji Apples, each\nLink: https://shop-b.example.com/p/fuji-apple-each\nSnippet: One large Fuji apple.",
+      "5": "Title: Orchard Press Co., About Us\nLink: https://brands.example.com/orchard-press\nSnippet: A family company pressing juice since 1985.",
+      "6": "Title: How to Store Apples\nLink: https://recipes.example.com/store-apples\nSnippet: Keep apples cool and away from other produce."
+    },
+    "trusted_search_results": []
+  },
+  "Sunmill Protein Powder, Vanilla, 2 lb": {
+    "product_title": "Sunmill Protein Powder, Vanilla, 2 lb",
+    "product_description": "Whey protein powder, vanilla flavor, 2 lb tub.",
+    "search_results": {
+      "1": "Title: Sunmill Whey Protein Powder, Vanilla, 2 lb tub\nLink: https://shop-a.example.com/fitness/sunmill-protein-vanilla-2lb\nSnippet: Sunmill vanilla whey protein, 2 lb tub, 25 g protein per scoop.",
+      "2": "Title: Sunmill Whey Protein Powder, Vanilla, 5 lb tub\nLink: https://shop-a.example.com/fitness/sunmill-protein-vanilla-5lb\nSnippet: Sunmill vanilla whey protein in the 5 lb tub.",
+      "3": "Title: Sunmill Protein Shake, Vanilla, Ready to Drink, 12 pk\nLink: https://shop-b.example.com/p/sunmill-rtd-vanilla-12pk\nSnippet: Ready-to-drink vanilla protein shakes, twelve 11 fl oz cartons.",
+      "4": "Title: Sunmill Protein Bar, Vanilla Almond, 12 ct\nLink: https://shop-b.example.com/p/sunmill-bar-vanilla-12ct\nSnippet: Chewy protein bars with vanilla and almond.",
+      "5": "Title: Sunmill Whey Protein Powder, Chocolate, 2 lb tub\nLink: https://shop-a.example.com/fitness/sunmill-protein-chocolate-2lb\nSnippet: Sunmill chocolate whey protein, 2 lb tub.",
+      "6": "Title: PeakForm Whey Protein Powder, Vanilla, 2 lb\nLink: https://shop-a.example.com/fitness/peakform-vanilla-2lb\nSnippet: PeakForm vanilla whey protein, 2 lb.",
+      "7": "Title: Sunmill Vanilla Protein Powder 2 lb | Shop B\nLink: https://shop-b.example.com/p/sunmill-vanilla-protein-2lb\nSnippet: Sunmill whey protein powder in vanilla, 2 lb tub. Same item as the shop-a listing."
+    },
+    "trusted_search_results": [
+      1,
+      2,
+      7
+    ]
+  },
+  "Greenfield Frsh Bkd Sourdough Boule 24oz": {
+    "product_title": "Greenfield Frsh Bkd Sourdough Boule 24oz",
+    "product_description": "Greenfield fresh baked sourdough boule, 24 oz.",
+    "search_results": {
+      "1": "Title: Greenfield Fresh Baked Sourdough Boule, 24 oz\nLink: https://shop-a.example.com/bakery/greenfield-sourdough-boule-24oz\nSnippet: Fresh baked sourdough boule from Greenfield, 24 oz loaf.",
+      "2": "Title: Greenfield Fresh Baked Sourdough Boule, 16 oz\nLink: https://shop-a.example.com/bakery/greenfield-sourdough-boule-16oz\nSnippet: Fresh baked sourdough boule from Greenfield, 16 oz loaf.",
+      "3": "Title: Greenfield Fresh Baked Multigrain Boule, 24 oz\nLink: https://shop-b.example.com/p/greenfield-multigrain-boule-24oz\nSnippet: Fresh baked multigrain boule, 24 oz loaf.",
+      "4": "Title: Greenfield Sourdough Boule Dough Kit, Frozen, 24 oz\nLink: https://shop-b.example.com/p/greenfield-sourdough-dough-kit\nSnippet: Frozen sourdough dough, thaw, proof and bake at home.",
+      "5": "Title: Easy Sourdough Boule Recipe\nLink: https://recipes.example.com/sourdough-boule\nSnippet: Make a crusty sourdough boule with a starter and a Dutch oven.",
+      "6": "Title: Greenfield Frsh Bkd Sourdough Boule 24oz | Shop B\nLink: https://shop-b.example.com/p/greenfield-sourdough-boule-24oz\nSnippet: Greenfield fresh baked sourdough boule, 24 oz. Same loaf as the shop-a listing."
+    },
+    "trusted_search_results": [
+      1,
+      2,
+      6
+    ]
+  },
+  "Pantry Pride Pancake Mix, Buttermilk, Gluten Free": {
+    "product_title": "Pantry Pride Pancake Mix, Buttermilk, Gluten Free",
+    "product_description": "Gluten free buttermilk pancake mix.",
+    "search_results": {
+      "1": "Title: Pantry Pride Gluten Free Buttermilk Pancake Mix, 20 oz\nLink: https://shop-a.example.com/pantry/pantry-pride-gf-buttermilk-20oz\nSnippet: Gluten free buttermilk pancake mix. SKU PP-4410.",
+      "2": "Title: Pantry Pride Gluten Free Buttermilk Pancake Mix, 40 oz\nLink: https://shop-a.example.com/pantry/pantry-pride-gf-buttermilk-40oz\nSnippet: Gluten free buttermilk pancake mix, family size. SKU PP-4411.",
+      "3": "Title: Pantry Pride Buttermilk Pancake Mix, 32 oz\nLink: https://shop-b.example.com/p/pantry-pride-buttermilk-32oz\nSnippet: Classic buttermilk pancake mix made with wheat flour. SKU PP-4420.",
+      "4": "Title: Pantry Pride Gluten Free Chocolate Chip Pancake Mix, 20 oz\nLink: https://shop-b.example.com/p/pantry-pride-gf-chocolate-chip-20oz\nSnippet: Gluten free pancake mix with chocolate chips.",
+      "5": "Title: Fluffy Gluten Free Pancakes Recipe\nLink: https://recipes.example.com/gluten-free-pancakes\nSnippet: Make fluffy pancakes from scratch with gluten free flour.",
+      "6": "Title: Pantry Pride Gluten Free Pancake Mix, Buttermilk\nLink: https://shop-b.example.com/p/pantry-pride-gf-buttermilk\nSnippet: Buttermilk pancake mix, gluten free. SKU PP-4410.",
+      "7": "Title: Pantry Pride Gluten Free Waffle Mix, 20 oz\nLink: https://shop-a.example.com/pantry/pantry-pride-gf-waffle-20oz\nSnippet: Gluten free waffle mix for crisp waffles."
+    },
+    "trusted_search_results": [
+      1,
+      2,
+      6
+    ]
+  },
+  "Cascade Falls Sparkling Water, Blackberry, 12 pk": {
+    "product_title": "Cascade Falls Sparkling Water, Blackberry, 12 pk",
+    "product_description": "Blackberry flavored sparkling water, twelve 12 fl oz cans.",
+    "search_results": {
+      "1": "Title: Cascade Falls Still Water, Blackberry Infused, 12 pk\nLink: https://shop-a.example.com/water/cascade-falls-still-blackberry-12pk\nSnippet: Blackberry infused still water, no bubbles, twelve bottles.",
+      "2": "Title: Cascade Falls Sparkling Water, Raspberry, 12 pk\nLink: https://shop-a.example.com/water/cascade-falls-sparkling-raspberry-12pk\nSnippet: Raspberry flavored sparkling water, twelve cans.",
+      "3": "Title: Cascade Falls Sparkling Water, Variety Pack, 24 ct\nLink: https://shop-b.example.com/p/cascade-falls-variety-24ct\nSnippet: Blackberry, raspberry, lime and peach sparkling water in one pack.",
+      "4": "Title: Ridgeway Sparkling Water, Blackberry, 12 pk\nLink: https://shop-b.example.com/p/ridgeway-sparkling-blackberry-12pk\nSnippet: Blackberry sparkling water from Ridgeway, twelve cans.",
+      "5": "Title: Cascade Falls Beverage Co.\nLink: https://brands.example.com/cascade-falls\nSnippet: Meet the team behind Cascade Falls and find a store near you.",
+      "6": "Title: Sparkling Blackberry Cocktail Recipe\nLink: https://recipes.example.com/sparkling-blackberry-cocktail\nSnippet: Muddle blackberries and top with sparkling water."
+    },
+    "trusted_search_results": []
+  }
+}

@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 700" width="100%" role="img" shape-rendering="crispEdges" aria-label="Path of one product through the pipeline: input, parse, build prompt, cache key, API call, drop bad ids, checkpoint, score. 8 workers, 3 retries, 30 second timeout. A dashed branch shows replay, where a miss stops and no call is made.">
+<rect width="1200" height="700" fill="#0e1117"/>
+<rect x="1" y="1" width="1198" height="698" fill="none" stroke="#2c333d" stroke-width="2"/>
+<rect x="0" y="0" width="8" height="700" rx="0" fill="#7f9bb8"/>
+<text x="44" y="56" font-family="-apple-system, Segoe UI, Helvetica, Arial, sans-serif" font-size="23" fill="#8b949e" letter-spacing="2">PIPELINE</text>
+<text x="44" y="112" font-family="-apple-system, Segoe UI, Helvetica, Arial, sans-serif" font-size="44" fill="#e6e9ee" font-weight="700">The path of one product</text>
+<rect x="44" y="160" width="250" height="124" rx="0" fill="#171c24" stroke="#2c333d" stroke-width="2"/>
+<text x="60" y="202" font-family="-apple-system, Segoe UI, Helvetica, Arial, sans-serif" font-size="24" fill="#e6e9ee" font-weight="700">Input JSON</text>
+<text x="60" y="242" font-family="SF Mono, Menlo, Consolas, monospace" font-size="23" fill="#8b949e">one record each</text>
+<rect x="330" y="160" width="250" height="124" rx="0" fill="#171c24" stroke="#2c333d" stroke-width="2"/>
+<text x="346" y="202" font-family="-apple-system, Segoe UI, Helvetica, Arial, sans-serif" font-size="24" fill="#e6e9ee" font-weight="700">Parse</text>
+<text x="346" y="242" font-family="SF Mono, Menlo, Consolas, monospace" font-size="23" fill="#8b949e">bad rows skipped</text>
+<line x1="294" y1="222" x2="328" y2="222" stroke="#8b949e" stroke-width="2"/>
+<polygon points="330,222 318,215 318,229" fill="#8b949e"/>
+<rect x="616" y="160" width="250" height="124" rx="0" fill="#171c24" stroke="#2c333d" stroke-width="2"/>
+<text x="632" y="202" font-family="-apple-system, Segoe UI, Helvetica, Arial, sans-serif" font-size="24" fill="#e6e9ee" font-weight="700">Build prompt</text>
+<text x="632" y="242" font-family="SF Mono, Menlo, Consolas, monospace" font-size="23" fill="#8b949e">rules + results</text>
+<line x1="580" y1="222" x2="614" y2="222" stroke="#8b949e" stroke-width="2"/>
+<polygon points="616,222 604,215 604,229" fill="#8b949e"/>
+<rect x="902" y="160" width="250" height="124" rx="0" fill="#171c24" stroke="#7f9bb8" stroke-width="3"/>
+<text x="918" y="202" font-family="-apple-system, Segoe UI, Helvetica, Arial, sans-serif" font-size="24" fill="#e6e9ee" font-weight="700">Cache key</text>
+<text x="918" y="242" font-family="SF Mono, Menlo, Consolas, monospace" font-size="23" fill="#8b949e">SHA-256</text>
+<line x1="866" y1="222" x2="900" y2="222" stroke="#8b949e" stroke-width="2"/>
+<polygon points="902,222 890,215 890,229" fill="#8b949e"/>
+<rect x="44" y="352" width="250" height="124" rx="0" fill="#171c24" stroke="#7f9bb8" stroke-width="3"/>
+<text x="60" y="394" font-family="-apple-system, Segoe UI, Helvetica, Arial, sans-serif" font-size="24" fill="#e6e9ee" font-weight="700">API call</text>
+<text x="60" y="434" font-family="SF Mono, Menlo, Consolas, monospace" font-size="23" fill="#8b949e">3 retries, 30 s</text>
+<rect x="330" y="352" width="250" height="124" rx="0" fill="#171c24" stroke="#2c333d" stroke-width="2"/>
+<text x="346" y="394" font-family="-apple-system, Segoe UI, Helvetica, Arial, sans-serif" font-size="24" fill="#e6e9ee" font-weight="700">Drop bad ids</text>
+<text x="346" y="434" font-family="SF Mono, Menlo, Consolas, monospace" font-size="23" fill="#8b949e">not in results</text>
+<line x1="294" y1="414" x2="328" y2="414" stroke="#8b949e" stroke-width="2"/>
+<polygon points="330,414 318,407 318,421" fill="#8b949e"/>
+<rect x="616" y="352" width="250" height="124" rx="0" fill="#171c24" stroke="#2c333d" stroke-width="2"/>
+<text x="632" y="394" font-family="-apple-system, Segoe UI, Helvetica, Arial, sans-serif" font-size="24" fill="#e6e9ee" font-weight="700">Checkpoint</text>
+<text x="632" y="434" font-family="SF Mono, Menlo, Consolas, monospace" font-size="23" fill="#8b949e">after each one</text>
+<line x1="580" y1="414" x2="614" y2="414" stroke="#8b949e" stroke-width="2"/>
+<polygon points="616,414 604,407 604,421" fill="#8b949e"/>
+<rect x="902" y="352" width="250" height="124" rx="0" fill="#171c24" stroke="#2c333d" stroke-width="2"/>
+<text x="918" y="394" font-family="-apple-system, Segoe UI, Helvetica, Arial, sans-serif" font-size="24" fill="#e6e9ee" font-weight="700">Score</text>
+<text x="918" y="434" font-family="SF Mono, Menlo, Consolas, monospace" font-size="23" fill="#8b949e">vs. labels</text>
+<line x1="866" y1="414" x2="900" y2="414" stroke="#8b949e" stroke-width="2"/>
+<polygon points="902,414 890,407 890,421" fill="#8b949e"/>
+<line x1="1027" y1="284" x2="1027" y2="318" stroke="#2c333d" stroke-width="2"/>
+<line x1="1027" y1="318" x2="169" y2="318" stroke="#2c333d" stroke-width="2"/>
+<line x1="169" y1="318" x2="169" y2="350" stroke="#2c333d" stroke-width="2"/>
+<polygon points="169,352 162,340 176,340" fill="#8b949e"/>
+<text x="1015" y="308" font-family="-apple-system, Segoe UI, Helvetica, Arial, sans-serif" font-size="23" fill="#8b949e" text-anchor="end">miss</text>
+<line x1="44" y1="504" x2="1156" y2="504" stroke="#2c333d" stroke-width="2"/>
+<text x="44" y="538" font-family="-apple-system, Segoe UI, Helvetica, Arial, sans-serif" font-size="24" fill="#e6e9ee" font-weight="700">8 workers at a time. 3 retries. 30 s timeout per call.</text>
+<text x="44" y="572" font-family="-apple-system, Segoe UI, Helvetica, Arial, sans-serif" font-size="23" fill="#8b949e">Cache hit: skip the call and go straight to Drop bad ids.</text>
+<rect x="44" y="594" width="1112" height="50" rx="0" fill="none" stroke="#7f9bb8" stroke-width="2" stroke-dasharray="8 6"/>
+<text x="60" y="627" font-family="-apple-system, Segoe UI, Helvetica, Arial, sans-serif" font-size="23" fill="#e6e9ee">Replay: a miss is a per-product error. No API call, no sleep.</text>
+</svg>
