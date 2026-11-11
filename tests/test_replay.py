@@ -5,6 +5,7 @@ the stand-in client that raises if replay ever tries to call the model."""
 
 import json
 import os
+import shutil
 import subprocess
 import sys
 from pathlib import Path
@@ -112,20 +113,41 @@ def test_sample_replays_end_to_end_with_no_key(tmp_path):
     )
     assert done.returncode == 0, done.stderr
     assert "0 errors" in done.stdout
-    assert "scripted by hand, no model was called" in done.stdout
-    assert "$" not in done.stdout.split("== Scripted")[0]  # no dollar cost is printed for scripted answers
+    assert "Replay: 8 hits, 0 misses" in done.stdout
+    assert "Cost of the stored calls: $" in done.stdout  # priced from the token counts stored with each recorded answer
+    assert "== Accuracy vs. ground truth (8 products) ==" in done.stdout
     written = json.loads(out.read_text())
-    # imperfection 1: the made-up id 9 is dropped, and the summary says so
-    assert written["Harbor Pilsener Lager 6 pk"]["llm_trusted_search_results"] == [1, 2]
-    assert "Dropped ids (not among a product's results): 1" in done.stdout
-    # imperfection 2: one near miss is kept, so precision is below 1.00
-    assert written["FizzWell Cola Zero Sugar 12 fl oz can"]["llm_trusted_search_results"] == [1, 2, 5, 6]
-    assert "Precision:            0.947" in done.stdout
+    assert len(written) == 8
+    assert all(isinstance(v["llm_trusted_search_results"], list) for v in written.values())
 
 
-def test_sample_cache_matches_the_scripted_answers():
+def test_sample_cache_holds_a_model_recording_for_every_product():
     done = subprocess.run([sys.executable, "tools/check_replay.py"], capture_output=True, text=True, cwd=ROOT)
     assert done.returncode == 0, done.stdout
+
+
+def test_an_edited_stored_answer_fails_the_check(tmp_path, monkeypatch, capsys):
+    sys.path.insert(0, str(ROOT / "tools"))
+    import check_replay
+
+    copy = tmp_path / "cache"
+    shutil.copytree(ROOT / "sample" / "cache", copy)
+    monkeypatch.setattr(check_replay, "CACHE_DIR", copy)
+    assert check_replay.main() == 0  # an untouched copy passes
+    capsys.readouterr()
+    victim = sorted(copy.glob("*.json"))[0]
+    stored = json.loads(victim.read_text())
+    stored["trusted_result_ids"] = stored["trusted_result_ids"] + [99]
+    victim.write_text(json.dumps(stored))
+    assert check_replay.main() == 1
+    assert "differs from the pinned recording" in capsys.readouterr().out
+    # a manifest that lists no hashes must fail too, never switch the hash check off
+    monkeypatch.setattr(check_replay, "CACHE_DIR", ROOT / "sample" / "cache")
+    empty = tmp_path / "recording.json"
+    empty.write_text(json.dumps({"model": DEFAULT_MODEL, "files": {}}))
+    monkeypatch.setattr(check_replay, "MANIFEST", empty)
+    assert check_replay.main() == 1
+    assert "has no hash for" in capsys.readouterr().out
 
 
 def test_replay_is_refused_with_no_cache_or_with_explanation(tmp_path):

@@ -1,12 +1,1 @@
-{
-  "confidence": null,
-  "input_tokens": 0,
-  "output_tokens": 0,
-  "reason": null,
-  "source": "scripted",
-  "trusted_result_ids": [
-    1,
-    2,
-    6
-  ]
-}
+{"trusted_result_ids": [1, 2, 6], "reason": null, "confidence": null, "input_tokens": 1179, "output_tokens": 11}

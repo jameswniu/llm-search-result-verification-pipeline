@@ -1,8 +1,1 @@
-{
-  "confidence": null,
-  "input_tokens": 0,
-  "output_tokens": 0,
-  "reason": null,
-  "source": "scripted",
-  "trusted_result_ids": []
-}
+{"trusted_result_ids": [], "reason": null, "confidence": null, "input_tokens": 1090, "output_tokens": 6}

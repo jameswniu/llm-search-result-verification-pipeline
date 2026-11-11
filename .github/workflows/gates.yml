@@ -28,7 +28,7 @@ jobs:
       - name: Keyless replay on the sample, no packages installed
         run: python3 run.py sample/catalog.json --cache-dir sample/cache --replay --output output.json
 
-      - name: Sample cache matches the scripted answers and the current prompt
+      - name: Sample cache holds one recorded answer per product for the current prompt
         run: python3 tools/check_replay.py
 
       - name: Install

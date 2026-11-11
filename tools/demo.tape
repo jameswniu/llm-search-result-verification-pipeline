@@ -16,7 +16,9 @@ Enter
 Sleep 400ms
 Show
 
-Type "python3 run.py sample/catalog.json --cache-dir sample/cache --replay 2>/dev/null"
+Type `python3 run.py sample/catalog.json --cache-dir sample/cache --replay \`
+Enter
+Type "  2>/dev/null | head -13"
 Enter
 Sleep 6s
 

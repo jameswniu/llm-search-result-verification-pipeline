@@ -23,10 +23,9 @@ THE WHOLE THING IN FOUR STEPS
 REPLAY MODE
   With SelectorConfig.replay on, step 3 never happens. Answers come only
   from the cache, and a missing one becomes a per-product error that says
-  the cache must be rebuilt. No key and no openai package is needed, which
-  is why the import above is allowed to fail. _NoClient is a stand-in for
-  the API client that raises if anything tries to use it. A stored answer
-  marked "source": "scripted" was written by hand, not by a model.
+  the answers must be recorded again. No key and no openai package is
+  needed, which is why the import above is allowed to fail. _NoClient is a
+  stand-in for the API client that raises if anything tries to use it.
 
 WHY THE CROSS-VALIDATION CODE REUSES THIS SAME FILE
   `SelectorConfig.system_prompt` can be swapped out. The normal pipeline
@@ -100,7 +99,6 @@ class ProductResult:
     output_tokens: int = 0
     cost_usd: float = 0.0
     cache_hit: bool = False
-    scripted: bool = False  # the stored answer was written by hand, no model was called
     dropped_ids: list[int] = field(default_factory=list)  # ids the answer named that are not among the product's results
 
 
@@ -192,7 +190,7 @@ class Selector:
                     error=(
                         f"ReplayMiss: no stored answer for {product.product_title!r} (key {key[:12]}). "
                         "The prompt, schema, model or product text changed since the cache was built. "
-                        "Rebuild the sample cache with tools/build_sample_cache.py"
+                        "Record the answers again by running the same command with a key and without --replay."
                     ),
                 )
 
@@ -289,6 +287,5 @@ class Selector:
             output_tokens=output_tokens,
             cost_usd=cost,
             cache_hit=cache_hit,
-            scripted=payload.get("source") == "scripted",
             dropped_ids=dropped,
         )

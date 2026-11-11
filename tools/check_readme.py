@@ -2,8 +2,8 @@
 """Fails when README.md, its badges or its figures disagree with the live numbers.
 
 Every number comes from tools/facts.py. Two groups exist. PRIVATE FILE numbers are parsed from
-docs/REFEREE.md (the referee cards, one table per number). SCRIPTED SAMPLE numbers are recomputed
-by a replay of hand-written answers. This script checks, one line each:
+docs/REFEREE.md (the referee cards, one table per number). RECORDED SAMPLE numbers are recomputed
+by a replay of answers recorded from one real model run. This script checks, one line each:
 
   1. figure files match their generators (the render scripts with --check)
   2. the README embeds the three figures and a GIF, and each figure carries its numbers as text
@@ -31,7 +31,7 @@ import facts  # noqa: E402
 README = (ROOT / "README.md").read_text()
 FIGURES = {"media/hero.svg": "render_hero.py", "media/pipeline.svg": "render_map.py", "media/results.svg": "render_panel.py"}
 BADGE_RE = re.compile(r"https://img\.shields\.io/badge/([A-Za-z_]+)-([^-\s)\"]+)-[A-Za-z0-9]+")
-REQUIRED_BADGES = ("tests", "private_file_precision", "private_file_pooled_precision", "private_file_held_out_recall", "scripted_sample", "license")
+REQUIRED_BADGES = ("tests", "private_file_precision", "private_file_pooled_precision", "private_file_held_out_recall", "recorded_sample", "license")
 fails: list[str] = []
 
 
@@ -89,8 +89,9 @@ def required(f: dict) -> dict[str, list[str]]:
             f"About ${p['cost_rounded_per_100k']} per 100,000 products, estimated from recorded token counts at list prices",
             p["cost_calls"], p["cost_input_tokens"], p["cost_output_tokens"],
             f"precision {s['precision']} and recall {s['recall']} on {s['n_products']} products",
+            f"cost ${s['cost_usd']}", f"missed {s['fn']} of {s['tp'] + s['fn']} right results",
         ],
-        "media/hero.svg": [f"{p['held_precision_lo']} to {p['held_precision_hi']}", p["cv_precision"], f"{s['replayed']} of {s['n_products']}", "PRIVATE FILE", "SCRIPTED SAMPLE"],
+        "media/hero.svg": [f"{p['held_precision_lo']} to {p['held_precision_hi']}", p["cv_precision"], f"{s['replayed']} of {s['n_products']}", "PRIVATE FILE", "RECORDED SAMPLE"],
         "media/results.svg": [f"{p['held_precision_lo']} to {p['held_precision_hi']}", p["held_recall"], f"{p['cv_precision']} [{p['cv_interval_lo']}, {p['cv_interval_hi']}]",
                               f"{p['cv_recall_lo']} to {p['cv_recall_hi']}", p["keep_precision"], p["keep_recall"], "PRIVATE FILE"],
         "media/pipeline.svg": [f"{c['workers']} workers", f"{c['retries']} retries", f"{c['timeout_s']} s timeout"],
@@ -149,7 +150,7 @@ def check_badges(f: dict) -> None:
     live = {
         "tests": f"{n} passed",
         "private_file_precision": f"{p['held_precision_lo']} to {p['held_precision_hi']}",
-        "scripted_sample": f"{s['replayed']}/{s['n_products']} replayed",
+        "recorded_sample": f"{s['replayed']}/{s['n_products']} replayed",
         "private_file_pooled_precision": p["cv_precision"],
         "private_file_held_out_recall": p["held_recall"],
         "license": "Apache 2.0",

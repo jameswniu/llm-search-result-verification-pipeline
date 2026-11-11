@@ -129,9 +129,7 @@ def main() -> int:
     if comparisons:
         report = compute_metrics(comparisons)
         print()
-        scripted_run = args.replay and any(r.scripted for r in results)
-        header = "Scripted answers vs. labels (no model was called)" if scripted_run else "Accuracy vs. ground truth"
-        print(format_report(report, header=header))
+        print(format_report(report, header="Accuracy vs. ground truth"))
     else:
         # A fresh, unlabeled test file has NO correct answers included,
         # so this is the expected, quiet path for that file, not a sign

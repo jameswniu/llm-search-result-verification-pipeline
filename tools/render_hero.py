@@ -2,7 +2,7 @@
 """Emit media/hero.svg, the three headline cards at the top of the README.
 
 Two cards are PRIVATE FILE numbers (measured on a private labeled file, recorded, parsed from
-docs/REFEREE.md). One card is a SCRIPTED SAMPLE number (a replay of hand-written answers, no model).
+docs/REFEREE.md). One card is a RECORDED SAMPLE number (a replay of answers recorded from one real model run).
 Every number comes from tools/facts.py.
 
     python3 tools/render_hero.py --write    regenerate
@@ -26,11 +26,11 @@ def build():
     cards = [
         (f"{p['held_precision_lo']} to {p['held_precision_hi']}", ["precision, 10 held-out", "products, 4 runs"], "PRIVATE FILE", P.ACCENT),
         (p["cv_precision"], ["precision, pooled over", f"{f['code']['folds']} folds of 50 products"], "PRIVATE FILE", P.ACCENT),
-        (f"{s['replayed']} of {s['n_products']}", ["sample products replay", "with no key"], "SCRIPTED SAMPLE", P.GOOD),
+        (f"{s['replayed']} of {s['n_products']}", ["sample products replay", "with no key"], "RECORDED SAMPLE", P.GOOD),
     ]
     label = (f"Search result verification pipeline. Private file, recorded: precision {p['held_precision_lo']} to {p['held_precision_hi']} "
              f"on 10 held-out products and {p['cv_precision']} pooled over {f['code']['folds']} folds. "
-             f"Scripted sample: {s['replayed']} of {s['n_products']} products replay with no key.")
+             f"Recorded sample: {s['replayed']} of {s['n_products']} products replay with no key.")
     out = [P.svg_open(W, H, label)]
     inner = W - 2 * M
     out.append(P.rect(0, 0, 8, H, P.ACCENT))

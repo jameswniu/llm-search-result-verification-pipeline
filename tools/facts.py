@@ -8,9 +8,9 @@ They are parsed from the referee cards in docs/REFEREE.md, so the page cannot di
 cards. They are recorded and cannot be reproduced from this repo. A referee card is one table in
 docs/REFEREE.md that states a number, how it was counted and what makes it look worse.
 
-SCRIPTED SAMPLE numbers are recomputed by a replay run over sample/catalog.json. Replay serves
-the answers in sample/cache without a model. Those answers are scripted by hand in
-sample/answers.json, so these numbers describe what the scripted run prints and nothing about a model.
+RECORDED SAMPLE numbers are recomputed by a replay run over sample/catalog.json. Replay serves
+the answers in sample/cache without a model. Those answers were recorded from one real model run
+and are not edited, so these numbers describe that one run on 8 invented products, not a benchmark.
 
     python3 tools/facts.py          print every number in a short table
     python3 tools/facts.py --short  the headline numbers on a few lines
@@ -94,7 +94,7 @@ def code_constants() -> dict:
 
 
 def sample_numbers() -> dict:
-    """Group (a): a replay run over the scripted sample, scored by src/metrics.py."""
+    """Group (a): a replay run over the recorded sample, scored by src/metrics.py."""
     products, _ = load_products(json.loads(CATALOG.read_text()))
     with tempfile.TemporaryDirectory() as tmp, contextlib.redirect_stderr(io.StringIO()):
         results, _, _ = run_file(CATALOG, Path(tmp) / "out.json", SelectorConfig(cache_dir=CACHE_DIR, replay=True))
@@ -115,6 +115,9 @@ def sample_numbers() -> dict:
         "fn": report.total_false_negatives,
         "exact": report.n_exact_match,
         "dropped_ids": sum(len(r.dropped_ids) for r in results),
+        "input_tokens": sum(r.input_tokens for r in results),
+        "output_tokens": sum(r.output_tokens for r in results),
+        "cost_usd": f"{sum(r.cost_usd for r in results):.4f}",
         "keep_precision": f"{keep_all.precision:.2f}",
         "keep_recall": f"{keep_all.recall:.2f}",
     }
@@ -136,11 +139,11 @@ def main() -> int:
         print(f"  pooled folds  precision {p['cv_precision']} [{p['cv_interval_lo']}, {p['cv_interval_hi']}], recall {p['cv_recall_lo']} to {p['cv_recall_hi']}")
         print(f"  keep all      precision {p['keep_precision']}, recall {p['keep_recall']}")
         print(f"  cost          about ${p['cost_rounded_per_100k']} per 100,000 products")
-        print("SCRIPTED SAMPLE (what the scripted run prints, no model)")
-        print(f"  {q['replayed']} of {q['n_products']} replayed, precision {q['precision']}, recall {q['recall']}, {q['dropped_ids']} dropped id")
+        print("RECORDED SAMPLE (one real model run, replayed with no key, not a benchmark)")
+        print(f"  {q['replayed']} of {q['n_products']} replayed, precision {q['precision']}, recall {q['recall']}, {q['dropped_ids']} invented ids dropped")
         return 0
     for group, title in (("private", "PRIVATE FILE (recorded, parsed from docs/REFEREE.md, cannot be reproduced from this repo)"),
-                         ("sample", "SCRIPTED SAMPLE (what the scripted run prints, no model was called)"),
+                         ("sample", "RECORDED SAMPLE (one real model run, replayed with no model call)"),
                          ("code", "CODE CONSTANTS (read from the code)")):
         print(f"== {title} ==")
         for k, v in f[group].items():

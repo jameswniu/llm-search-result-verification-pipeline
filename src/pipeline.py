@@ -17,8 +17,8 @@ THE WHOLE RUN IN FOUR PARTS
 
 REPLAY AND THE RUN SUMMARY
   In replay mode answers come only from the cache and nothing is called.
-  print_run_summary then reports hits and misses, says plainly when the
-  answers were scripted by hand, and prints no dollar cost for them.
+  print_run_summary then reports hits and misses, and prices the stored
+  calls from the token counts saved with each answer.
 
 WHY WORKERS RUNNING AT THE SAME TIME, INSTEAD OF ONE AT A TIME
   Each question to the model takes about a second and just sits there
@@ -216,14 +216,9 @@ def print_run_summary(results: list[ProductResult], replay: bool = False) -> Non
         print(f"== Run summary, replayed ({n} products, {len(errors)} errors) ==")
         print(f"Replay: {cache_hits} hits, {misses} misses")
         print("Latency: n/a (replayed)")
-        scripted = sum(1 for r in results if r.scripted)
-        if scripted:
-            print(f"Answers: {scripted} scripted by hand, no model was called, so there is no cost")
-            dropped = sum(len(r.dropped_ids) for r in results)
-            print(f"Dropped ids (not among a product's results): {dropped}")
-        else:
-            print(f"Tokens: {total_input} input, {total_output} output (stored)")
-            print(f"Cost of the stored calls: ${total_cost:.4f}  (from stored token counts)")
+        print(f"Tokens: {total_input} input, {total_output} output (stored)")
+        print(f"Cost of the stored calls: ${total_cost:.4f}  (from stored token counts)")
+        print(f"Dropped ids (not among a product's results): {sum(len(r.dropped_ids) for r in results)}")
     else:
         print(f"== Run summary ({n} products, {len(errors)} errors, {cache_hits} cache hits) ==")
         print(f"Avg latency per (non-cached) call: {avg_latency:.2f}s")
